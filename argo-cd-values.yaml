@@ -1,0 +1,13 @@
+configs:
+  cm:
+    admin.enabled: false
+    users.anonymous.enabled: true
+  params:
+    server.insecure: true
+  rbac:
+    policy.default: role:admin
+nameOverride: argo-cd
+server:
+  service:
+    servicePortHttp: 8080
+    type: LoadBalancer

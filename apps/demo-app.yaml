@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/runhub-dev/demo-infra.git
+    targetRevision: main
+    path: charts/demo-app
+    helm:
+      parameters:
+        - name: commit
+          value: ff3a266bd8ebb83862e0f784fafdb5e4379361b7
+  destination:
+    name: in-cluster
+    namespace: demo-app
+  syncPolicy:
+    automated:
+      prune: true
