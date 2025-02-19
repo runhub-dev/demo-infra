@@ -12,7 +12,7 @@ spec:
     helm:
       parameters:
         - name: commit
-          value: ff3a266bd8ebb83862e0f784fafdb5e4379361b7
+          value: 74a3966b8c3b33c7d3d855a57e9ebb46db2836ba
   destination:
     name: in-cluster
     namespace: demo-app
